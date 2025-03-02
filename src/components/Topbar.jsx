@@ -23,7 +23,7 @@ const Topbar = () => {
                     <nav className="space-x-4">
                         {SideBarItem.map((navItem, index) => <NavLink to={navItem.path} key={index} className={({ isActive }) => isActive ? 'text-yellow-400' : 'hover:text-gray-300'}>{navItem.title}</NavLink>)}
 
-                        <button onClick={() => navigate('/login')} className="text-xl font-semibold">user</button> 
+                        {/* <button onClick={() => navigate('/login')} className="text-xl font-semibold">user</button>  */}
                     </nav>
                 </div>
             </header>

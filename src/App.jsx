@@ -4,6 +4,7 @@ import Login from './pages/Auth/Login';
 import LayoutDefault from './layout/Default';
 import Signup from './pages/Auth/Signup';
 import PasswordReset from './pages/Auth/PasswordReset';
+import Dashboard from './pages/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,14 @@ const router = createBrowserRouter([
     element: <LayoutDefault>
       <PasswordReset/>
     </LayoutDefault>
-  }
+  },
+  {
+
+    path: '/dashboard',
+    element: <LayoutDefault>
+      <Dashboard/>
+    </LayoutDefault>
+  },
 ])
 
 
