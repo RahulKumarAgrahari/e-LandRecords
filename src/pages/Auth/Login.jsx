@@ -8,7 +8,7 @@ function Login() {
     const [activeTab, setActiveTab] = useState({})
     const location = useLocation();
     const navigate = useNavigate()
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const queryParams = new URLSearchParams(location.search);
     const activeTabVal = queryParams.get('role');
@@ -19,9 +19,9 @@ function Login() {
     }, [activeTabVal])
     return (
         <>
-            <div className='max-w-xl mx-auto' >
+            <div className='max-w-xl mx-auto mt-12' >
                 <Tabs options={tabOptions} activeTab={activeTabVal} switchTab={(e) => {
-                    navigate({ search: `?role=${e.value}` })
+                    navigate({ search: `?role=${e.value}` }, {replace: true})
                     setActiveTab(e)
                 }} />
                 <div className="flex items-center justify-center h-full mt-16">
@@ -56,6 +56,9 @@ function Login() {
 
                             </button>
                         </form>
+                        <p className="mt-4 text-center text-gray-600">
+                            Forgot password ? <Link to={{ pathname: '/password-reset' }} className="text-blue-500 hover:underline">Forgot Password</Link>
+                        </p>
                         <p className="mt-4 text-center text-gray-600">
                             Don't have an account? <Link to={{ pathname: '/signup' }} className="text-blue-500 hover:underline">Sign up</Link>
                         </p>

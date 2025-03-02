@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Login from './pages/Auth/Login';
 import LayoutDefault from './layout/Default';
 import Signup from './pages/Auth/Signup';
+import PasswordReset from './pages/Auth/PasswordReset';
 
 const router = createBrowserRouter([
   {
@@ -14,11 +15,21 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <Login/>
+    element: <LayoutDefault>
+      <Login/>
+    </LayoutDefault>
   },
   {
     path: '/signup',
-    element: <Signup/>
+    element: <LayoutDefault>
+      <Signup/>
+    </LayoutDefault>
+  },
+  {
+    path: '/password-reset',
+    element: <LayoutDefault>
+      <PasswordReset/>
+    </LayoutDefault>
   }
 ])
 
