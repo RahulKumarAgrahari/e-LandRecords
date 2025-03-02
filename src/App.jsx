@@ -5,6 +5,7 @@ import LayoutDefault from './layout/Default';
 import Signup from './pages/Auth/Signup';
 import PasswordReset from './pages/Auth/PasswordReset';
 import Dashboard from './pages/Dashboard';
+import LandRegistration from './pages/LandRegistration';
 
 const router = createBrowserRouter([
   {
@@ -33,10 +34,15 @@ const router = createBrowserRouter([
     </LayoutDefault>
   },
   {
-
     path: '/dashboard',
     element: <LayoutDefault>
       <Dashboard/>
+    </LayoutDefault>
+  },
+  {
+    path: '/land-registration',
+    element: <LayoutDefault>
+      <LandRegistration/>
     </LayoutDefault>
   },
 ])
