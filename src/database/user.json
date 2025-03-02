@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "first_name":"Abhishek",
+        "middle_name":"",
+        "last_name":"Gupta",
+        "role":"1",
+        "cred":"12345678"
+    },
+    {
+        "id":2,
+        "name":"Rahul",
+        "middle_name":"",
+        "last_name":"ag",
+        "role":"2",
+        "cred":"123456789"
+    }
+]
