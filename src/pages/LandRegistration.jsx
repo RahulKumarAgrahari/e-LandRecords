@@ -27,10 +27,10 @@ export default () => {
         e.preventDefault();
         // Handle form submission logic here
         console.log("Form Data Submitted:", formData);
-        // const localVal = localStorage.getItem('regiserred-land-record')
-        // let regisetedLands = localVal ? JSON.parse(localVal) : []
-        // regisetedLands.push(formData)
-        // localStorage.setItem('regiserred-land-record',JSON.stringify(regisetedLands))
+        const localVal = localStorage.getItem('regiserred-land-record')
+        let regisetedLands = localVal ? JSON.parse(localVal) : []
+        regisetedLands.push(formData)
+        localStorage.setItem('regiserred-land-record',JSON.stringify(regisetedLands))
     };
     return (
         <>
