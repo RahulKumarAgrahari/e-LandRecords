@@ -6,46 +6,55 @@ import Signup from './pages/Auth/Signup';
 import PasswordReset from './pages/Auth/PasswordReset';
 import Dashboard from './pages/Dashboard';
 import LandRegistration from './pages/LandRegistration';
+import ProtectedRoute from './composable/ProtectedRoute';
 
-const router = createBrowserRouter([
+const RouteList = [
   {
 
     path: '/',
     element: <LayoutDefault>
-      <Home/>
+      <Home />
     </LayoutDefault>
   },
   {
     path: '/login',
     element: <LayoutDefault>
-      <Login/>
+      <Login />
     </LayoutDefault>
   },
   {
     path: '/signup',
     element: <LayoutDefault>
-      <Signup/>
+      <Signup />
     </LayoutDefault>
   },
   {
     path: '/password-reset',
     element: <LayoutDefault>
-      <PasswordReset/>
+      <PasswordReset />
     </LayoutDefault>
   },
   {
     path: '/dashboard',
     element: <LayoutDefault>
-      <Dashboard/>
-    </LayoutDefault>
+      <Dashboard />
+    </LayoutDefault>,
+    roles: ['admin']
   },
   {
     path: '/land-registration',
     element: <LayoutDefault>
-      <LandRegistration/>
-    </LayoutDefault>
+      <LandRegistration />
+    </LayoutDefault>,
+    roles: ['user']
   },
-])
+]
+const router = createBrowserRouter(RouteList.map((e) => {
+  return {
+    path: e.path,
+    element: <ProtectedRoute element={e.element} roles={e.roles} />
+  }
+}))
 
 
 function App() {
@@ -53,9 +62,9 @@ function App() {
   return (
     <>
       <div className="App">
-        
+
         <RouterProvider router={router} />
-          
+
       </div>
     </>
   );
